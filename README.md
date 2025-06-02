@@ -5,7 +5,7 @@ This is a simple Jekyll theme with a blog and a light/dark theme toggle.
 ![Light mode](./assets/images/ScreenshotLight.png)
 ![Dark mode](./assets/images/ScreenshotDark.png)
 
-I have used ChatGPT and Github Co-pilot a lot when creating this theme. I had limited knowledge about Jeykll.
+I have used ChatGPT and Github Co-pilot a lot when creating this theme.
 
 ## Getting Started
 
