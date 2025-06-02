@@ -1,0 +1,20 @@
+title: Minimalist Jekyll Blog
+author: Your Name
+description: A simple, clean Jekyll blog
+theme: minima
+
+# Build settings
+pagination:
+  enabled: true
+  per_page: 10
+  permalink: "/:num/"
+  title: ":title - Page :num"
+  sort_field: "date"
+  sort_reverse: true
+  trail:
+    before: 2
+    after: 2
+
+# Plugins
+plugins:
+  - jekyll-paginate-v2

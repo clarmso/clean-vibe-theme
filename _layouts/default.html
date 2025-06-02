@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ page.title }}</title>
+    <link rel="stylesheet" href="/assets/style.css">
+    <link rel="icon" href="{{ site.baseurl }}/assets/icons/favicon.ico" type="image/x-icon">
+</head>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+      // Existing theme toggle code...
+      const themeToggle = document.getElementById("theme-toggle");
+      const body = document.body;
+      if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark-mode");
+      }
+      themeToggle.addEventListener("click", function () {
+        body.classList.toggle("dark-mode");
+        if (body.classList.contains("dark-mode")) {
+          localStorage.setItem("theme", "dark");
+        } else {
+          localStorage.setItem("theme", "light");
+        }
+      });
+  });
+</script>  
+<body>
+    <nav>
+      <div id="nav-links">
+        <a href="/">
+          <img src="{{ site.baseurl }}/assets/icons/avatar.png" alt="Site Icon" class="nav-icon">
+        </a>
+        <a href="/">
+          Home
+        </a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+      </div>
+      <div class="nav-controls">
+        <button id="theme-toggle" aria-label="Toggle theme">
+          <img id="sun-icon" src="{{ site.baseurl }}/assets/icons/sun.svg" alt="Light Mode">
+          <img id="moon-icon" src="{{ site.baseurl }}/assets/icons/moon.svg" alt="Dark Mode">
+        </button>
+      </div>
+    </nav>
+    <main>
+        {{ content }}
+    </main>
+    <hr class="divider">
+    <footer class="site-footer">
+      <p>&copy; {{ site.time | date: '%Y' }} [Your Name]</p>
+    </footer>
+</body>
+</html>

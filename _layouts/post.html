@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<article class="blog-post">
+  <header class="post-header">
+    <h2 class="post-title">{{ page.title }}</h2>
+    {% if page.subtitle %}
+      <h3 class="post-subtitle">{{ page.subtitle }}</h3>
+    {% endif %}
+    <p class="post-date">{{ page.date | date: "%B %d, %Y" }}</p>
+  </header>
+  <section class="post-content">
+    {{ content }}
+  </section>
+</article>
