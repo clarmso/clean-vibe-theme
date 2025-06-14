@@ -14,7 +14,7 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'  # or whatever version you need
-      - run: gem install bundler jekyll
+      - run: gem install --user-install bundler jekyll
       - run: bundle install
       - run: bundle exec jekyll build
       - uses: FirebaseExtended/action-hosting-deploy@v0
