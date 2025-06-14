@@ -11,10 +11,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: |
-          gem install bundler jekyll
-          bundle install
-          bundle exec jekyll build
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: '3.2'  # or whatever version you need
+      - run: gem install bundler jekyll
+      - run: bundle install
+      - run: bundle exec jekyll build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
