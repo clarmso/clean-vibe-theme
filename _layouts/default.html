@@ -4,20 +4,26 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{{ page.title }}</title>
-    <link rel="stylesheet" href="/assets/style.css">
+    <script>
+      (function() {
+        if (localStorage.getItem("theme") === "dark") {
+          document.documentElement.classList.add("dark-mode");
+        }
+      })();
+    </script>
+    <!-- Preload avatar -->
+    <link rel="preload" as="image" href="{{ site.baseurl }}/assets/icons/avatar.png">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/style.css">
     <link rel="icon" href="{{ site.baseurl }}/assets/icons/favicon.ico" type="image/x-icon">
 </head>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-      // Existing theme toggle code...
       const themeToggle = document.getElementById("theme-toggle");
-      const body = document.body;
-      if (localStorage.getItem("theme") === "dark") {
-        body.classList.add("dark-mode");
-      }
+      const root = document.documentElement;  // use the <html> element
+
       themeToggle.addEventListener("click", function () {
-        body.classList.toggle("dark-mode");
-        if (body.classList.contains("dark-mode")) {
+        root.classList.toggle("dark-mode");
+        if (root.classList.contains("dark-mode")) {
           localStorage.setItem("theme", "dark");
         } else {
           localStorage.setItem("theme", "light");

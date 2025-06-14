@@ -37,17 +37,17 @@ body {
 }
 
 /* Hide the sun/moon icon */
-body.dark-mode img#sun-icon {
+html.dark-mode img#sun-icon {
   filter: invert(1);
   display: inline;
 }
-body.dark-mode img#moon-icon {
+html.dark-mode img#moon-icon {
   display: none;
 }
-body:not(.dark-mode) img#moon-icon {
+html:not(.dark-mode) img#moon-icon {
   display: inline;
 }
-body:not(.dark-mode) img#sun-icon {
+html:not(.dark-mode) img#sun-icon {
   display: none;
 }
 
