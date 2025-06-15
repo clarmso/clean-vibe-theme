@@ -15,17 +15,11 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build
         uses: actions/jekyll-build-pages@v1
-      - name: debug
-        run: |
-          ls
-          echo "***"
-          ls _site
-          echo "***"
-          ls _site/assets
-          echo "***"
-          ls _site/blog
-          echo "***"
-          ls _site/contact
+      - name: What is being deployed?
+        uses: actions/upload-artifact@v3
+        with:
+          path: _site
+          retention-days: 2
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
