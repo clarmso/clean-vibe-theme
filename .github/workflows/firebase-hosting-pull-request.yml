@@ -18,9 +18,13 @@ jobs:
       - name: debug
         run: |
           ls
+          echo "***"
           ls _site
+          echo "***"
           ls _site/assets
+          echo "***"
           ls _site/blog
+          echo "***"
           ls _site/contact
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
