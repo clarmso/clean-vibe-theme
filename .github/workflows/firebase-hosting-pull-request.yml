@@ -13,14 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'  # or whatever version you need
-      - name: Add Ruby gems to PATH
-        run: echo "$(ruby -e 'print Gem.user_dir')/bin" >> $GITHUB_PATH
-      - run: gem install --user-install bundler jekyll
-      - run: bundle install
-      - run: bundle exec jekyll build
+      - uses: actions/jekyll-build-pages@v1
       - name: What is being deployed?
         uses: actions/upload-artifact@v4
         with:
