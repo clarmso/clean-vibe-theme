@@ -15,6 +15,13 @@ jobs:
       - uses: actions/checkout@v4
       - name: Build
         uses: actions/jekyll-build-pages@v1
+      - name: debug
+        run: |
+          ls
+          ls _site
+          ls _site/assets
+          ls _site/blog
+          ls _site/contact
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
