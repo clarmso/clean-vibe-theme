@@ -16,7 +16,7 @@ jobs:
       - name: Build
         uses: actions/jekyll-build-pages@v1
       - name: What is being deployed?
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           path: _site
           retention-days: 2
