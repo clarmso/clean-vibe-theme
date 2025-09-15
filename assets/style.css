@@ -1,6 +1,7 @@
+/* Use an even softer black for light mode */
 :root {
   --bg-color: #fafafa;
-  --text-color: #333;
+  --text-color: #333; /* darker text color for light mode */
 }
 
 .dark-mode {
@@ -8,14 +9,27 @@
   --text-color: #e0e0e0;
 }
 
+/* Use Libre Baskerville for body text */
 body {
-  font-family: 'Work Sans', 'Inter', 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  font-family: 'Instrument Sans', sans-serif;
   margin: 10px auto;
   max-width: 700px;
   line-height: 1.6;
   background-color: var(--bg-color);
   color: var(--text-color);
   transition: background 0.3s, color 0.3s;
+}
+
+/* Use Open Sans for headings */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Libre Baskerville', serif; 
+  font-weight: bold;
+}
+
+/* Use Instrument Sans (body's font) for navigation links and controls */
+#nav-links a,
+.nav-controls button {
+  font-family: 'Instrument Sans', sans-serif;
 }
 
 /* Theme Toggle */
@@ -126,6 +140,47 @@ a:hover, a:focus {
    /* padding: 1em 0; */
   font-size: 0.8em;
   color: inherit;
+}
+
+/* Post title styling */
+.post-title {
+  font-size: 2rem;          /* Main title stays large */
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Make H1s in post content smaller and more proportional */
+.post-content h1 {
+  font-size: 1.5rem;        /* Smaller than default H1 */
+  font-weight: 600;         /* Medium weight */
+  margin-top: 2rem;         /* Space above */
+  margin-bottom: 1rem;      /* Space below */
+  color: #333;              /* Slightly lighter than black */
+  line-height: 1.3;
+}
+
+/* Adjust other headings proportionally */
+.post-content h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.post-content h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Make subtitle even smaller */
+.post-subtitle {
+  font-size: 1.1rem;        /* Smaller subtitle */
+  font-weight: 400;
+  color: #666;
+  margin-bottom: 1rem;
+  font-style: italic;
 }
 
 /* Responsive styles for mobile devices */
