@@ -43,11 +43,12 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        # Outputs to the './_site' directory by default
-        run: |
-          gem install --user-install bundler jekyll
-          bundle install
+      - name: Add Ruby gems to PATH
+        run: echo "$(ruby -e 'print Gem.user_dir')/bin" >> $GITHUB_PATH
+      - run: gem install --user-install bundler jekyll
+      - run: bundle install
+      - run: |
+          # Outputs to the './_site' directory by default
           bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
