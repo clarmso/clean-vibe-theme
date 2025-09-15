@@ -38,6 +38,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2' # Not needed with a .ruby-version file
+      - name: Add Ruby gems to PATH
+        run: echo "$(ruby -e 'print Gem.user_dir')/bin" >> $GITHUB_PATH
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
