@@ -37,14 +37,18 @@ jobs:
         # https://github.com/ruby/setup-ruby/releases/tag/v1.207.0
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '3.4' # Not needed with a .ruby-version file
+          ruby-version: '3.2' # Not needed with a .ruby-version file
+      - name: Add Ruby gems to PATH
+        run: echo "$(ruby -e 'print Gem.user_dir')/bin" >> $GITHUB_PATH
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-      - name: Build with Jekyll
-        # Outputs to the './_site' directory by default
-        run: |
-          bundle install
+      - name: Add Ruby gems to PATH
+        run: echo "$(ruby -e 'print Gem.user_dir')/bin" >> $GITHUB_PATH
+      - run: gem install --user-install bundler jekyll
+      - run: bundle install
+      - run: |
+          # Outputs to the './_site' directory by default
           bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
