@@ -3,6 +3,9 @@ author: Your Name
 description: A simple, clean Jekyll blog
 theme: minima
 
+# Permalink structure for blog posts
+permalink: /blog/:year/:month/:title/
+
 # Build settings
 pagination:
   enabled: true
@@ -18,3 +21,4 @@ pagination:
 # Plugins
 plugins:
   - jekyll-paginate-v2
+  - jekyll-minifier
