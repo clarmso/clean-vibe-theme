@@ -12,7 +12,7 @@ pagination:
   {% for post in paginator.posts %}
     {% unless post.unlisted %}
       <li>
-        <a href="{{ post.url }}">{{ post.title }}</a> - <small>{{ post.date | date: "%B %d, %Y" }}</small>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a> - <small>{{ post.date | date: "%B %d, %Y" }}</small>
       </li>
     {% endunless %}
   {% endfor %}

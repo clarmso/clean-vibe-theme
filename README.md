@@ -1,6 +1,6 @@
 # clean-vibe-theme
 
- 💻 Live demo: https://clean-vibe-theme-7f564.web.app/
+ 💻 Live demo: https://clarmso.github.io/clean-vibe-theme/
 
 This is a simple Jekyll theme with a blog and a light/dark theme toggle.
 
